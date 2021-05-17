@@ -1,4 +1,4 @@
-on: [push]
+on: [deployment]
 name: Azure ARM for Bpxtest azure2.0 prototype
 jobs:
   build-and-deploy:
