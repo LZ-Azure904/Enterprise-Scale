@@ -68,12 +68,12 @@
             // Create management group for landing zones
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "name": "[variables('enterpriseScaleManagementGroups').LandingZone]",
+            "name": "[variables('enterpriseScaleManagementGroups').LandingZones]",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
             ],
             "properties": {
-                "displayName": "[variables('enterpriseScaleManagementGroups').LandingZone]",
+                "displayName": "[variables('enterpriseScaleManagementGroups').LandingZones]",
                 "details": {
                     "parent": {
                     "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
