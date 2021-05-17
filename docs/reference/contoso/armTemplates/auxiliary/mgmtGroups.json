@@ -4,6 +4,7 @@
     "parameters": {
         "topLevelManagementGroupPrefix": {
             "type": "string",
+            "defaultValue": "BPX-1.5",
             "metadata": {
                 "description": "Provide prefix for the management group structure."
             }
