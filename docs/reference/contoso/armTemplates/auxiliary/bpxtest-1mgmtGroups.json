@@ -4,39 +4,10 @@
     "parameters": {
         "topLevelManagementGroupPrefix": {
             "type": "string",
-            "defaultValue": "BPX-2.0",
+            "defaultValue": "BPX2.0",
             "metadata": {
                 "description": "Provide prefix for the management group structure."
             }
-        },
-        "platformMgs": {
-            "type": "array",
-            "defaultValue": [
-                "Management",
-                "Connectivity",
-                "Identity"
-            ],
-            "metadata": {
-                "description": "Management groups for platform specific purposes, such as management, networking, identity etc."
-            }
-        },
-        "landingZoneMgs": {
-            "type": "array",
-            "defaultValue": [
-                "Production",
-                "Non-Prod"
-            ],
-            "metadata": {
-                "description": "These are the landing zone management groups."
-            }
-        }
-    },
-    "variables": {
-        "enterpriseScaleManagementGroups": {
-            "Foundation": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Foundation')]",
-            "LandingZones": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Landingzones')]",
-            "Decommissioned": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Decommissioned')]",
-            "Sandbox": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Sandbox')]"
         }
     },
     "resources": [
