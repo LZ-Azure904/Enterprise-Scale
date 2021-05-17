@@ -34,9 +34,9 @@
     "variables": {
         "enterpriseScaleManagementGroups": {
             "Foundation": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Foundation')]",
-            "LandingZone": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Landingzones')]",
+            "LandingZones": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Landingzones')]",
             "Decommissioned": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Decommissioned')]",
-            "Sandboxes": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Sandbox')]"
+            "Sandbox": "[concat(parameters('topLevelManagementGroupPrefix'), '-', 'Sandbox')]"
         }
     },
     "resources": [

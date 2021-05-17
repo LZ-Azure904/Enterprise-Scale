@@ -4,6 +4,7 @@
   "parameters": {
     "topLevelManagementGroupPrefix": {
       "type": "String",
+      "defaultValue": "BPX-2.0",
       "maxLength": 10,
       "metadata": {
         "description": "Provide a prefix (max 10 characters, unique at tenant-scope) for the Management Group hierarchy and other resources created as part of Enterprise-scale."
@@ -247,7 +248,7 @@
                 ]
               },
               "then": {
-                "effect": "DeployIfNotExists",
+                "effect": "Audit",
                 "details": {
                   "type": "Microsoft.Consumption/budgets",
                   "deploymentScope": "Subscription",
@@ -272,7 +273,7 @@
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
-                    "location": "northeurope",
+                    "location": "westus2",
                     "properties": {
                       "mode": "Incremental",
                       "parameters": {
@@ -956,7 +957,7 @@
                   "displayName": "IP address of the DNSServers",
                   "description": "Provide the IP address of the DNS server the vnet will use, or leave empty to use Azure DNS."
                 },
-                "defaultValue": []
+                "defaultValue": [10.215.33.81, 10.215.255.102, 10.75.7.8, 168.63.129.16]
               }
             },
             "metadata": {
