@@ -18,4 +18,4 @@ jobs:
         azcliversion: 2.0.72
         inlineScript: |
           az account show
-          az account management-group create --name Test-Mgmt --parent e8ffc671-bfab-4391-8de4-ccc8d28f8f11
+          az account management-group create --name Test-Mgmt-3 --parent e8ffc671-bfab-4391-8de4-ccc8d28f8f11
