@@ -21,7 +21,7 @@ jobs:
         managementGroupId: e8ffc671-bfab-4391-8de4-ccc8d28f8f11
         region: ${{ secrets.AZURE_REGION }}
         template: ./docs/reference/contoso/armTemplates/auxiliary/bpxtest-mgmtGroups.json
-        deploymentName: bpx azure2.0 mgmt structure mvp
+        deploymentName: bpx-azure2-mgmt-structure-mvp
 
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
