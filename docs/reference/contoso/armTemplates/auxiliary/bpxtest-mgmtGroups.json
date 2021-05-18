@@ -1,10 +1,10 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "topLevelManagementGroupPrefix": {
             "type": "string",
-            "defaultValue": "BPX-2.0",
+            "defaultValue": "BPX2.0",
             "metadata": {
                 "description": "Provide prefix for the management group structure."
             }
@@ -45,6 +45,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[parameters('topLevelManagementGroupPrefix')]",
+            "scope": "/",
             "properties": {}
         },
         {
@@ -52,6 +53,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[variables('enterpriseScaleManagementGroups').Foundation]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
             ],
@@ -69,6 +71,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[variables('enterpriseScaleManagementGroups').LandingZones]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
             ],
@@ -86,6 +89,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[variables('enterpriseScaleManagementGroups').Sandbox]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
             ],
@@ -103,6 +107,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[variables('enterpriseScaleManagementGroups').Decommissioned]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
             ],
@@ -121,6 +126,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('platformMgs')[copyIndex()])]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups', variables('enterpriseScaleManagementGroups').Foundation)]"
             ],
@@ -143,6 +149,7 @@
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
             "name": "[concat(parameters('topLevelManagementGroupPrefix'), '-', parameters('landingZoneMgs')[copyIndex()])]",
+            "scope": "/",
             "dependsOn": [
                 "[tenantResourceId('Microsoft.Management/managementGroups/', variables('enterpriseScaleManagementGroups').LandingZones)]"
             ],

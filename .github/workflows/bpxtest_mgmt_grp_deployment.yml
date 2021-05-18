@@ -1,4 +1,4 @@
-on: [deployment]
+on: [push]
 name: Azure ARM for Bpxtest azure2.0 prototype
 jobs:
   build-and-deploy:
@@ -20,7 +20,7 @@ jobs:
         scope: managementgroup
         managementGroupId: e8ffc671-bfab-4391-8de4-ccc8d28f8f11
         region: ${{ secrets.AZURE_REGION }}
-        template: ./docs/reference/contoso/armTemplates/auxiliary/bpxtest-1mgmtGroups.json
+        template: ./docs/reference/contoso/armTemplates/auxiliary/bpxtest-mgmtGroups.json
         deploymentName: bpx-azure2-mgmt-structure-mvp-spn04-1mgmt
 
       # output containerName variable from template
