@@ -8,13 +8,6 @@
             "metadata": {
                 "description": "Provide prefix for the management group structure."
             }
-        },
-        "nextLevelID": {
-            "type": "string",
-            "defaultValue": "Foundation",
-            "metadata": {
-                "description": "Provide prefix for the management group structure."
-            }
         }
     },
     "resources": [
@@ -22,15 +15,9 @@
             // Create top level management group under tenant root
             "type": "Microsoft.Management/managementGroups",
             "apiVersion": "2020-05-01",
-            "name": "[parameters('nextLevelID')]",
-            "properties": {
-                "displayName": "[parameters('nextLevelID')]",
-                "details": {
-                    "parent": {
-                    "id": "[tenantResourceId('Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
-                    }
-                }
-            }
+            "name": "[parameters('topLevelManagementGroupPrefix')]",
+            "scope": "/",
+            "properties": {}
         }
     ],
     "outputs": {}
