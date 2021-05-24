@@ -1,13 +1,13 @@
 on: [deployment]
 
-name: AzureLoginSample
+name: AzurePolicyDeploymentWithBicep
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Log in with Azure Test3
+    - name: Log in with Azure
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -18,4 +18,4 @@ jobs:
         azcliversion: 2.0.72
         inlineScript: |
           az account show
-          az account management-group create --name Test-Mgmt-3 --parent e8ffc671-bfab-4391-8de4-ccc8d28f8f11
+          az deployment group create --name PolicyDeployment --resource-group PolicyGroup template-file bpxtest_root_mgmt_assignment.bicep
