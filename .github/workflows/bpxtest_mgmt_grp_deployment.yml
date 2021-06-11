@@ -18,7 +18,7 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         scope: managementgroup
-        managementGroupId: e8ffc671-bfab-4391-8de4-ccc8d28f8f11
+        managementGroupId: e8ffc671-bfab-4391-8d11e4-ccc8904d28f8f11
         region: ${{ secrets.AZURE_REGION }}
         template: ./docs/reference/contoso/armTemplates/auxiliary/bpxtest-mgmtGroups.json
         deploymentName: bpx-azure2-mgmt-structure-mvp-spn04-1mgmt
